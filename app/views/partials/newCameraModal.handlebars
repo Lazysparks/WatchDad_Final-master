@@ -1,0 +1,26 @@
+<!-- Modal voor camera-->
+<div class="modal fade" id="newCamera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">Camera toevoegen</h4>
+            </div>
+            <div class="modal-body">
+                <form id="new-camera-form" class="form-horizontal" action="/cameras" method="post">
+                    <div class="form-group">
+                        <label for="inputCameraName" class="col-sm-2 control-label">Naam camera</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cameraName" class="form-control" id="inputCameraName" placeholder="Naam camera">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                <button type="submit" form="new-camera-form" class="btn btn-primary">Toevoegen</button>
+            </div>
+        </div>
+    </div>
+</div>

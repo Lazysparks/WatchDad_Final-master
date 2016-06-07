@@ -1,0 +1,41 @@
+{{> header}}
+
+<div class="container-fluid">
+    <div class="col-md-2">
+        {{> navigation }}
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                {{ title }}
+            </div>
+            <div class="panel-body">
+                {{#each profiles}}
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="thumbnail">
+                            <img class="profile-image img-responsive" src="/img/anonymous-user.png">
+                            <div class="caption">
+                                <h4 class="text-center">{{this.firstName}} {{this.lastName}}</h4>
+                                <a href="/profile/{{this.id}}" class="btn btn-info btn-block">
+                                    Bekijk profiel
+                                </a>
+                                <button type="button" data-toggle="modal" data-target="#deleteProfileConfirm"
+                                        class="btn btn-danger btn-block">Verwijderen
+                                </button>
+                                {{> deleteProfileConrifm }}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="thumbnail">
+                        <button type="button" data-toggle="modal" data-target="#newProfileModal"
+                                class="btn btn-warning btn-block">Nieuw profiel
+                        </button>
+                        {{> newProfileModal}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

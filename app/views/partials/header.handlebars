@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-static">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-title" href="/">WatchDad</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                {{#if userFullName}}
+                    <li><a href="/">{{userFullName}}</a> </li>
+                    <li><a href="/signout">Log uit</a></li>
+                {{else}}
+                    <li><a href="/signup">Registreer</a></li>
+                    <li><a href="/signin">Login</a></li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>

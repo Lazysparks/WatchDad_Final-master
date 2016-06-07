@@ -1,0 +1,24 @@
+{{> header}}
+
+<div class="container ">
+    <div class="row ">
+        <div class="col-sm-6 col-md-4 col-md-offset-4 ">
+            <div class="text-center login-title">
+                <h1 class="brand-title">WatchDad</h1>
+                <h3> Log in</h3>
+            </div>
+            <form class="form-horizontal text-center" role="form" method="post">
+                {{#each messages}}
+                    <div class="bg-danger">{{this}}</div>
+                {{/each}}
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Gebruikersnaam" class="form-control">
+                    <input type="password" name="password" placeholder="Wachtwoord" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary btn-block">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

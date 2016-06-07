@@ -1,0 +1,141 @@
+{{> header}}
+
+
+<div class="container-fluid">
+    <div class="col-lg-2 col-md-2">
+        {{> navigation}}
+    </div>
+    <div class="col-lg-10 col-md-10">
+        <div class="row">
+            <div class="col-lg-7 col-md-7">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4><i class="material-icons">perm_identity</i> Profiel</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img alt="User Pic"
+                                 src="https://flipagram.com/assets/resources/img/fg-avatar-anonymous-user-retina.png"
+                                 class="img-circle img-responsive">
+                        </div>
+                        <div class=" col-md-9 col-lg-9 ">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>Voornaam:</td>
+                                    <td>{{profile.firstName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Achternaam:</td>
+                                    <td>{{profile.lastName}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="btn btn-primary">Wijzigen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4><i class="material-icons">date_range</i> Agenda</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="help-block">
+                            Dit zijn de tijden waarop de applicatie beweging verwacht bij de toegewezen camera's.
+                        </p>
+                        {{#if profile.agendaItems }}
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <td>Begin tijd</td>
+                                    <td>Eind tijd</td>
+                                    <td>Datum</td>
+                                    <td>Verwachting</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#each profile.agendaItems}}
+                                    <tr>
+                                        <td>{{this.startTime}}</td>
+                                        <td>{{this.endTime}}</td>
+                                        <td>{{this.formattedDate}}</td>
+                                        <td>Activiteit</td>
+                                    </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        {{else}}
+                            <div class="alert alert-warning">
+                                U heeft momenteel nog geen verwachte activiteit ingeplanned
+                            </div>
+                        {{/if}}
+
+                        <button type="button" data-toggle="modal" data-target="#newAgendaItemModal"
+                                class="btn btn-primary btn-block">Nieuw agendaItem
+                        </button>
+                        {{> newAgendaItemModal }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4><i class="material-icons">videocam</i>Camera's</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            {{# if profile.cameras}}
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <td>Camera naam</td>
+                                        <td>Status</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#each profile.camera}}
+                                        <tr class="danger">
+                                            <td>Huiskamer</td>
+                                            <td>Offline</td>
+                                        </tr>
+                                    {{/each}}
+                                    <tr class="success">
+                                        <td>Huiskamer 2</td>
+                                        <td>Online</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            {{else}}
+                                <div class="alert alert-warning">
+                                    <p>U heeft nog geen camera's toegewezen aan dit profiel!</p>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <form class="form ">
+                            <div class="form-group">
+                                <button class="btn btn-block btn-primary">
+                                    Toevoegen
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-lg-9 col-md-9">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4><i class="material-icons">date_range</i> Activiteit/meldingen</h4>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<!-- Modal voor camera-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" arial-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Cameragegevens</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Huidige naam camera: <b>{{nameCamera}}</b></h4>
+                <form id=new-profile-form" class="form-horizontal" action="/cameras" method="post">
+                    <div class="form-group">
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">Naam Camera veranderen</label>
+                        <br>
+                        <div class="col-sm-10">
+                            <input type="text" name="cameraName" class="form-control" id="cameraName" placeholder="camera naam">
+
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Camera verwijderen</button>
+
+
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Bevestigen</button>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+
+        </div>
+    </div>
+</div>
+</div>
